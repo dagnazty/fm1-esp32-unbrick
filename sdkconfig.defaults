@@ -1,0 +1,17 @@
+CONFIG_IDF_TARGET="esp32s3"
+CONFIG_FREERTOS_HZ=1000
+
+# UART0 (the board's USB-UART port) carries the Transporter protocol: nothing else may print on it
+CONFIG_ESP_CONSOLE_NONE=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+CONFIG_BOOTLOADER_LOG_LEVEL_NONE=y
+CONFIG_LOG_DEFAULT_LEVEL_NONE=y
+
+# GPIO19/20 belong to us (USB_KEY, pulses), then to the OTG host: never to USB-Serial-JTAG
+CONFIG_USJ_ENABLE_USB_SERIAL_JTAG=n
+
+# the key and the pulses busy-wait on core 1
+CONFIG_ESP_TASK_WDT_EN=n
+CONFIG_ESP_INT_WDT_TIMEOUT_MS=1000
+
+CONFIG_USB_HOST_DEBOUNCE_DELAY_MS=100

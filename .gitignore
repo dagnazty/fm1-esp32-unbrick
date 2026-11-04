@@ -1,0 +1,19 @@
+# fetched by tools/fetch_deps.sh (not ours to ship)
+/third_party/
+/main/wl82loader.bin
+
+# ESP-IDF
+/build/
+/sdkconfig
+/sdkconfig.old
+/managed_components/
+/dependencies.lock
+
+# what you make while recovering: FM-1 dumps, the board's own backup, logs (they hold your device's data)
+/backups/
+/backup/
+/logs/
+*.fwsc
+
+__pycache__/
+.DS_Store
